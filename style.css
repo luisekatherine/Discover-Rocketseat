@@ -4,6 +4,24 @@
   box-sizing: border-box;
 }
 
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.1);
+  --hover-icons: rgba(255, 255, 255, 0.1);
+  --surface-color:  rgba(255, 255, 255, 0.04);
+  --switch-bg-url: url(./assets/MoonStars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.1);
+  --hover-icons: rgba(0, 0, 0, 0.1);
+  --surface-color:  rgba(255, 255, 255, 0.04);
+  --switch-bg-url: url(./assets/Sun.svg);
+}
+
 body {
   /* background-image: url(./assets/bg-mobile.jpg);
   background-repeat: no-repeat;
@@ -11,12 +29,12 @@ body {
   background-size: cover; */
 
   /* background */
-  background: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
+  background: var(--bg-url) no-repeat top center/cover;
 }
 
 body * {
   font-family: "Inter", sans-serif;
-  color: white;
+  color: var(--text-color);
 }
 #container {
   width: 360px;
@@ -40,6 +58,13 @@ body * {
   margin-top: 8px;
 }
 
+#switch {
+  height: 32px;
+  width: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border-radius: 50%;
+
+}
 ul {
   list-style: none;
   display: flex;
@@ -55,14 +80,14 @@ ul li a {
   padding: 20px 16px;
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--stroke-color);
   font-weight: bold;
   transition: background 0.3s;
 }
 
 ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.04);
-  border: 1px solid #ffff;
+  background-color: var(--surface-color);
+  border: 1px solid var(--text-color);
 }
 
 .username {
@@ -86,7 +111,7 @@ ul li a:hover {
 
 #icons-profile a:hover {
   transition: background 0.3s;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--hover-icons);
   border-radius: 50%;
   align-items: center;
 
