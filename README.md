@@ -6,8 +6,8 @@
   <li>Git e Github</li>
 </ul>
 <div>
-  <img src="./assets/darkmode.png" width="50%">
-  <img src="./assets/lightmode.png"  width="50%">
+  <img src="./assets/darkmode.png">
+  <img src="./assets/lightmode.png">
 </div>
 
 #Rocketseat #HTML #CSS #Javascript #Figma

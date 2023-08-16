@@ -26,6 +26,7 @@
 
 body {
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 
 body * {
@@ -34,8 +35,10 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 360px;
   margin: 56px auto 0px;
+  padding: 0 24px;
 }
 
 #profile {
@@ -73,6 +76,11 @@ body * {
   transform: translateY(-50%);
   border: 1px solid var(--stroke-color-mode);
   cursor: pointer;
+  animation: slide-out .4s;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--hover-icons);
 }
 
 #switch span {
@@ -87,8 +95,7 @@ body * {
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in .4s forwards;
 }
 
 ul {
@@ -124,7 +131,7 @@ ul li a:hover {
 #icons-profile {
   display: flex;
   justify-content: space-around;
-  width: 360px;
+  max-width: 360px;
   padding: 18px 55px;
   font-size: 24px;
 }
@@ -143,7 +150,35 @@ ul li a:hover {
 }
 
 footer {
-  font-size: 10px;
+  font-size: 12px;
   text-align: center;
   padding: 24px;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
